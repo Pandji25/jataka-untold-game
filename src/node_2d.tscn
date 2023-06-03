@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bucdcvnfo5hhk" path="res://img/map.png" id="1_uwbtb"]
+[ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="2_w5283"]
+[ext_resource type="Script" path="res://src/Area2D.gd" id="2_wmd7l"]
+[ext_resource type="PackedScene" uid="uid://cp5fcu3h3mhqm" path="res://src/virtual_joystick.tscn" id="3_mvgqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31rmm"]
+size = Vector2(97.5, 493)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-208, 184)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_uwbtb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2272, 688, 2272, 0, 2376, -64, 2368, -504, 2232, -568, 2000, -1008, 1888, -1152, 1888, -1352, 1816, -1392, 1680, -1352, 1640, -1472, 1376, -1456, 1368, -1728, 1632, -1712, 1624, -2096, 1376, -2352, 528, -2328, -480, -2296, -480, -2128, -640, -2000, -600, -656, -720, -624, -704, -2000, -888, -1976, -1608, -1864, -1672, -1568, -2120, -1544, -2088, -968, -2176, -904, -2224, 32, -976, 40, -968, 152, -1776, 232, -1656, 1456, -1440, 1792, -1448, 2008, -1056, 2208, 88, 2000, 264, 2064, 640, 2064, 880, 2280, 1720, 2296, 1816, 1960, 2192, 1816, 2248, 1168, 2696, 1192, 1824, 2464, -1576, 2272, -2384, -88, -2232, -1696, -240, -2424, 1528, -2424, 2520, -200, 2728, 768)
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+position = Vector2(2264, 760)
+script = ExtResource("2_wmd7l")
+next_spawn_position = Vector2(505, 240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(160, 192)
+shape = SubResource("RectangleShape2D_31rmm")
+
+[node name="Player" parent="." instance=ExtResource("2_w5283")]
+position = Vector2(991, 1296)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Virtual joystick left" parent="UI" instance=ExtResource("3_mvgqw")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_body_exited"]
