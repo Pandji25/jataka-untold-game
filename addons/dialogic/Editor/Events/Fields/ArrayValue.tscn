@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://ch4j2lesn1sis"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/Fields/ArrayValue.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d3g4i4dshtdpu" path="res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres" id="2"]

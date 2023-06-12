@@ -55,32 +55,29 @@ func _execute() -> void:
 		if dialogic.has_subsystem('Styles') and character.custom_info.get('style', null):
 			dialogic.Styles.change_style(character.custom_info.style)
 		
-		dialogic.Text.update_name_label(character)
 		
 		if portrait and dialogic.has_subsystem('Portraits') and dialogic.Portraits.is_character_joined(character):
-				dialogic.Portraits.change_portrait(character, portrait)
-		var check_portrait = portrait if !portrait.is_empty() else dialogic.current_state_info['portraits'].get(character.resource_path, {}).get('portrait', '')
+			dialogic.Portraits.change_character_portrait(character, portrait)
+		dialogic.Portraits.change_speaker(character, portrait)
+		var check_portrait :String = portrait if !portrait.is_empty() else dialogic.current_state_info['portraits'].get(character.resource_path, {}).get('portrait', '')
 		if check_portrait and character.portraits.get(check_portrait, {}).get('sound_mood', '') in character.custom_info.get('sound_moods', {}):
 			dialogic.Text.update_typing_sound_mood(character.custom_info.get('sound_moods', {}).get(character.portraits[check_portrait].get('sound_mood', {}), {}))
 		elif !character.custom_info.get('sound_mood_default', '').is_empty():
 			dialogic.Text.update_typing_sound_mood(character.custom_info.get('sound_moods', {}).get(character.custom_info.get('sound_mood_default')))
+		else:
+			dialogic.Text.update_typing_sound_mood()
+			
+		dialogic.Text.update_name_label(character)
 	else:
+		dialogic.Portraits.change_speaker(null)
 		dialogic.Text.update_name_label(null)
 	
-	# this will only do something if the rpg portrait mode is enabled
-	if dialogic.has_subsystem('Portraits'):
-		dialogic.Portraits.update_rpg_portrait_mode(character, portrait)
 	
-	# RENDER DIALOG
-	var final_text: String = get_property_translated('text')
-	if dialogic.has_subsystem('VAR'):
-		final_text = dialogic.VAR.parse_variables(final_text)
-	if dialogic.has_subsystem('Glossary'):
-		final_text = dialogic.Glossary.parse_glossary(final_text)
-	
+	var final_text: String = dialogic.Text.parse_text(get_property_translated('text'))
+	dialogic.Text.about_to_show_text.emit({'text':final_text, 'character':character, 'portrait':portrait})
 	final_text = await dialogic.Text.update_dialog_text(final_text)
 	
-	#Plays the audio region for the current line.
+	# Plays the audio region for the current line.
 	if dialogic.has_subsystem('Voice') and dialogic.Voice.is_voiced(dialogic.current_event_idx):
 		dialogic.Voice.play_voice()
 	
@@ -89,7 +86,7 @@ func _execute() -> void:
 	#end of dialog
 	if dialogic.has_subsystem('Choices') and dialogic.Choices.is_question(dialogic.current_event_idx):
 		dialogic.Text.show_next_indicators(true)
-		dialogic.Choices.show_current_choices()
+		dialogic.Choices.show_current_choices(false)
 		dialogic.current_state = dialogic.states.AWAITING_CHOICE
 	elif Dialogic.Text.should_autoadvance():
 		dialogic.Text.show_next_indicators(false, true)
@@ -97,6 +94,7 @@ func _execute() -> void:
 	else:
 		dialogic.Text.show_next_indicators()
 		finish()
+	
 	if dialogic.has_subsystem('History'):
 		if character:
 			dialogic.History.store_simple_history_entry(final_text, event_name, {'character':character.display_name, 'character_color':character.color})

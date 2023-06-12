@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://ir6334lqtuwt"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/Fields/ConditionPicker.gd" id="1_q5p62"]
 [ext_resource type="PackedScene" uid="uid://dpwhshre1n4t6" path="res://addons/dialogic/Editor/Events/Fields/ComplexPicker.tscn" id="1_rr7mq"]

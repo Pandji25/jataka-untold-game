@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bwaxj1n401fp4"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/EventBlock/event_block.gd" id="1"]
 [ext_resource type="StyleBox" uid="uid://cl75ikyq2is7c" path="res://addons/dialogic/Editor/Events/styles/unselected_stylebox.tres" id="2_axj84"]

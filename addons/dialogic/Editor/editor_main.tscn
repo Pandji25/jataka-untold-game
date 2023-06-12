@@ -1,14 +1,14 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://de6yhw4r8jqb3"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/editor_main.gd" id="1_x88ov"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/editors_manager.gd" id="2_pe2tl"]
 [ext_resource type="PackedScene" uid="uid://cwe3r2tbh2og1" path="res://addons/dialogic/Editor/Common/side_bar.tscn" id="3_lp6hj"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Common/toolbar.gd" id="4_6cx8s"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Editor/HomePage/home_page.tscn" id="4_vey4f"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Editor/TimelineEditor/timeline_editor.tscn" id="5_e5v7u"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Editor/CharacterEditor/character_editor.tscn" id="6_y5x3e"]
+[ext_resource type="PackedScene" uid="uid://cqy73hshqqgga" path="res://addons/dialogic/Editor/HomePage/home_page.tscn" id="4_vey4f"]
+[ext_resource type="PackedScene" uid="uid://crce0na84rhfd" path="res://addons/dialogic/Editor/TimelineEditor/timeline_editor.tscn" id="5_e5v7u"]
+[ext_resource type="PackedScene" uid="uid://dlskc36c5hrwv" path="res://addons/dialogic/Editor/CharacterEditor/character_editor.tscn" id="6_y5x3e"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/directory_holder.gd" id="7_1xvr0"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Editor/Settings/settings_editor.tscn" id="7_lqfl7"]
+[ext_resource type="PackedScene" uid="uid://dganirw26brfb" path="res://addons/dialogic/Editor/Settings/settings_editor.tscn" id="7_lqfl7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lxu4"]
 content_margin_left = 4.0

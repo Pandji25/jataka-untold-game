@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://dlskc36c5hrwv"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/CharacterEditor/character_editor.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://mc7a24bcvjo3" path="res://addons/dialogic/Editor/Images/Pieces/open-icon.svg" id="2_pfw6k"]

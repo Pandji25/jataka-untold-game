@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dtimnsj014cu"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/Fields/Vector2.gd" id="1_288li"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Editor/Events/Fields/Number.tscn" id="3_l3bum"]
+[ext_resource type="PackedScene" uid="uid://kdpp3mibml33" path="res://addons/dialogic/Editor/Events/Fields/Number.tscn" id="3_l3bum"]
 
 [node name="Vector2" type="HBoxContainer"]
 offset_right = 40.0

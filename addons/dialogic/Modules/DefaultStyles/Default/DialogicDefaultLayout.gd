@@ -18,7 +18,6 @@ enum Alignments {Left, Center, Right}
 @export var box_size : Vector2 = Vector2(550, 110)
 
 @export_subgroup("Name Label")
-#@export var name_label_alignment = Alignments.Left
 @export var name_label_font_size := 15
 @export_file('*.ttf') var name_label_font : String = ""
 @export var name_label_use_character_color := true
@@ -26,9 +25,24 @@ enum Alignments {Left, Center, Right}
 @export var name_label_box_modulate : Color = box_modulate
 @export var name_label_alignment := Alignments.Left
 
-## FOR TESTING PURPOSES
+
+@export_group("Other")
+@export_subgroup("Next Indicator")
+@export var next_indicator_enabled := true
+@export_enum('bounce', 'blink', 'none') var next_indicator_animation := 0
+@export_file("*.png","*.svg") var next_indicator_texture := ''
+@export var next_indicator_show_on_questions := true
+@export var next_indicator_show_on_autoadvance := false
+
+
 func _ready():
 	add_to_group('dialogic_main_node')
+
+
+## Called by dialogic whenever export overrides might change
+func _apply_export_overrides():
+	if !is_inside_tree():
+		await ready
 	
 	## FONT SETTINGS
 	%DialogicNode_DialogText.alignment = text_alignment
@@ -66,6 +80,18 @@ func _ready():
 	
 	%NameLabelPanel.self_modulate = name_label_box_modulate
 	
+	%NameLabelPanel.position.x = 0
 	%NameLabelPanel.anchor_left = name_label_alignment/2.0
 	%NameLabelPanel.anchor_right = name_label_alignment/2.0
 	%NameLabelPanel.grow_horizontal = [1, 2, 0][name_label_alignment]
+
+	## NEXT INDICATOR SETTINGS
+	if !next_indicator_enabled:
+		%NextIndicator.queue_free()
+	else:
+		%NextIndicator.animation = next_indicator_animation
+		if FileAccess.file_exists(next_indicator_texture):
+			%NextIndicator.texture = load(next_indicator_texture)
+		%NextIndicator.show_on_questions = next_indicator_show_on_questions
+		%NextIndicator.show_on_autoadvance = next_indicator_show_on_autoadvance
+

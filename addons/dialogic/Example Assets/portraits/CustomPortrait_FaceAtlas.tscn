@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://bgshjju5v2q0i"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Example Assets/portraits/CustomPortrait_FaceAtlas.gd" id="1_fc12l"]
 [ext_resource type="Texture2D" uid="uid://djqit26f4be4f" path="res://addons/dialogic/Example Assets/portraits/Princess/princess_blank.png" id="2_igcyp"]

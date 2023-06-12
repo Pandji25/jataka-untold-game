@@ -20,6 +20,35 @@ config/icon="res://icon.svg"
 PlayerVariables="*res://src/player_variables.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
+[dialogic]
+
+animations/join_default_length=0.5
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/join_default_wait=true
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+settings/text_speed=0.01
+text/skippable=true
+text/autoadvance_delay=1.0
+text/hide_empty_textbox=true
+text/autopauses={}
+glossary/default_case_sensitive=true
+layout/mode=0
+variables={}
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
 [dotnet]
 
 project/assembly_name="JakataUntold"

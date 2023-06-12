@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck6kbcto1lj04"]
+
+[ext_resource type="Texture2D" uid="uid://uy7ynneo5h21" path="res://img/logo_white_2.png" id="1_eogrd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.0
+offset_top = -195.5
+offset_right = 639.0
+offset_bottom = 195.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eogrd")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.5
+offset_top = -209.0
+offset_right = 100.5
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
