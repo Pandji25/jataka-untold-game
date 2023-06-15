@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://babul5h0cbys"]
+
+[ext_resource type="FontFile" uid="uid://ypvaujo8f13o" path="res://src/BreeSerif-Regular.ttf" id="1_ouboh"]
+
+[resource]
+default_font = ExtResource("1_ouboh")

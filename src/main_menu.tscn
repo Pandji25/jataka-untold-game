@@ -1,6 +1,271 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck6kbcto1lj04"]
+[gd_scene load_steps=14 format=3 uid="uid://ck6kbcto1lj04"]
 
-[ext_resource type="Texture2D" uid="uid://uy7ynneo5h21" path="res://img/logo_white_2.png" id="1_eogrd"]
+[ext_resource type="Texture2D" uid="uid://bojvnoke5a4jy" path="res://img/logo_white_3.png" id="1_ir5i2"]
+[ext_resource type="Script" path="res://src/main_menu.gd" id="1_rud8x"]
+[ext_resource type="Texture2D" uid="uid://bgpjph3nf56wv" path="res://img/mandala.png" id="2_q8f0x"]
+[ext_resource type="Texture2D" uid="uid://bwrtkdq5csq8d" path="res://img/play_button.png" id="3_xhnok"]
+[ext_resource type="Script" path="res://src/Selection.gd" id="5_igtvw"]
+[ext_resource type="PackedScene" uid="uid://4y7k2hlxxeab" path="res://src/level_select.tscn" id="5_x6ley"]
+
+[sub_resource type="Animation" id="Animation_5e1oj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_i73s2"]
+resource_name = "rotate"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pe4c"]
+_data = {
+"RESET": SubResource("Animation_5e1oj"),
+"rotate": SubResource("Animation_i73s2")
+}
+
+[sub_resource type="Animation" id="Animation_04mdo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro/Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro/Play:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro/Play/PlayButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Intro:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Selection:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Intro:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yy0m2"]
+resource_name = "menu_intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro/Logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro/Play:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro/Play/PlayButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Selection:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Intro:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cv0wr"]
+resource_name = "transition"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Selection:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Intro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqg45"]
+_data = {
+"RESET": SubResource("Animation_04mdo"),
+"menu_intro": SubResource("Animation_yy0m2"),
+"transition": SubResource("Animation_cv0wr")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,8 +274,100 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rud8x")
+metadata/_edit_lock_ = true
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="Selection" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_igtvw")
+metadata/_edit_lock_ = true
+
+[node name="LevelSelect" parent="Selection" instance=ExtResource("5_x6ley")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="LevelSelect2" parent="Selection" instance=ExtResource("5_x6ley")]
+visible = false
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ChapterTitle" parent="Selection/LevelSelect2/VBoxContainer2/VBoxContainer" index="0"]
+text = "CHAPTER LOCKED"
+
+[node name="ChapterDescription" parent="Selection/LevelSelect2/VBoxContainer2/VBoxContainer/GridContainer" index="1"]
+text = "lorem ipsum dolor sit amet"
+
+[node name="PlayButton" parent="Selection/LevelSelect2/VBoxContainer2" index="1"]
+disabled = true
+
+[node name="LevelSelect3" parent="Selection" instance=ExtResource("5_x6ley")]
+visible = false
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ChapterTitle" parent="Selection/LevelSelect3/VBoxContainer2/VBoxContainer" index="0"]
+text = "CHAPTER LOCKED 2"
+
+[node name="ChapterDescription" parent="Selection/LevelSelect3/VBoxContainer2/VBoxContainer/GridContainer" index="1"]
+text = "lorem ipsum dolor sit amet"
+
+[node name="PlayButton" parent="Selection/LevelSelect3/VBoxContainer2" index="1"]
+disabled = true
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 418.0
+offset_right = -119.0
+offset_bottom = -418.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="RButton" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -59.5
+offset_bottom = 59.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_xhnok")
+
+[node name="LButton" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -59.5
+offset_right = 78.0
+offset_bottom = 59.5
+grow_vertical = 2
+texture_normal = ExtResource("3_xhnok")
+flip_h = true
+
+[node name="Intro" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="TextureRect" parent="Intro"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,23 +375,73 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -639.0
-offset_top = -195.5
+offset_top = -425.0
 offset_right = 639.0
-offset_bottom = 195.5
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_eogrd")
+texture = ExtResource("1_ir5i2")
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Control" parent="Intro"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.5
-offset_top = -209.0
-offset_right = 100.5
-offset_bottom = -123.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 220.0
+offset_right = 20.0
+offset_bottom = 260.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Mandala" type="TextureRect" parent="Intro/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -206.5
+offset_right = 206.5
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(206, 206)
+texture = ExtResource("2_q8f0x")
+
+[node name="Circle" type="AnimationPlayer" parent="Intro/Play/Mandala"]
+libraries = {
+"": SubResource("AnimationLibrary_1pe4c")
+}
+
+[node name="PlayButton" type="TextureButton" parent="Intro/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -57.5
+offset_right = 53.0
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_xhnok")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tqg45")
+}
+
+[connection signal="pressed" from="Buttons/RButton" to="Selection" method="_on_r_button_pressed"]
+[connection signal="pressed" from="Buttons/LButton" to="Selection" method="_on_l_button_pressed"]
+[connection signal="pressed" from="Intro/Play/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="Selection/LevelSelect"]
+[editable path="Selection/LevelSelect2"]
+[editable path="Selection/LevelSelect3"]

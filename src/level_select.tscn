@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://4y7k2hlxxeab"]
+
+[ext_resource type="Script" path="res://src/level_select.gd" id="1_naca2"]
+[ext_resource type="Theme" uid="uid://babul5h0cbys" path="res://src/main_menu.tres" id="1_qncf4"]
+[ext_resource type="Texture2D" uid="uid://lg2e123lfffq" path="res://img/char_fr.png" id="2_vl0s2"]
+[ext_resource type="Texture2D" uid="uid://bwrtkdq5csq8d" path="res://img/play_button.png" id="3_pqfrn"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_naca2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -417.0
+offset_right = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 81
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 226
+
+[node name="ChapterTitle" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("1_qncf4")
+theme_override_font_sizes/font_size = 72
+text = "CHAPTER 1: RURU JATAKA"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ChapterImage" type="TextureRect" parent="VBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_vl0s2")
+
+[node name="ChapterDescription" type="Label" parent="VBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_qncf4")
+theme_override_font_sizes/font_size = 32
+text = "A mystical deer saves a man from drowning
+in the river, but can the deer trust the man it's
+own life?"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_pqfrn")
+
+[connection signal="pressed" from="VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
