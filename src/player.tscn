@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddearu6ynh5x7"]
+[gd_scene load_steps=15 format=3 uid="uid://ddearu6ynh5x7"]
 
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_618wr"]
-[ext_resource type="Texture2D" uid="uid://cldkbyd3lcmjf" path="res://img/char_sheet_fix.png" id="2_f1b5g"]
+[ext_resource type="Texture2D" uid="uid://bm081bn6p4y70" path="res://img/char_sheet_fix.png" id="2_f1b5g"]
+[ext_resource type="PackedScene" uid="uid://nobir4utxtkh" path="res://src/virtual_joystick.tscn" id="3_7ojor"]
+[ext_resource type="Texture2D" uid="uid://byjm6g5c3rpac" path="res://img/talk.png" id="4_wa3ow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfklg"]
 radius = 57.3149
@@ -231,6 +233,12 @@ y_sort_enabled = true
 script = ExtResource("1_618wr")
 metadata/_edit_group_ = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 115)
+shape = SubResource("CircleShape2D_vfklg")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 115)
 shape = SubResource("CircleShape2D_vfklg")
@@ -250,3 +258,20 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="UI" instance=ExtResource("3_7ojor")]
+
+[node name="TalkButton" type="Button" parent="UI"]
+visible = false
+offset_left = 1471.0
+offset_top = 690.0
+offset_right = 1757.0
+offset_bottom = 966.0
+disabled = true
+icon = ExtResource("4_wa3ow")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="UI/TalkButton" to="." method="_on_talk_button_pressed"]

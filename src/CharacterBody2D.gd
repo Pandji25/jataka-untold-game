@@ -13,9 +13,6 @@ func _ready():
 	spawn = PlayerVariables.spawn_point
 	if spawn != null:
 		set_position(spawn)
-	
-	
-	pass
 
 func _process(delta: float) -> void:
 	move_vector = Vector2.ZERO
@@ -55,3 +52,14 @@ func _process(delta: float) -> void:
 				$Sprite2D.set_frame(9)
 				$Sprite2D.flip_h = false
 			
+
+func _on_area_2d_area_entered(area):
+	$UI/TalkButton.visible = true
+	$UI/TalkButton.disabled = false
+
+func _on_area_2d_area_exited(area):
+	$UI/TalkButton.visible = false
+	$UI/TalkButton.disabled = true
+
+func _on_talk_button_pressed():
+	pass

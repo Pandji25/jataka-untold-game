@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="JakataUntold"
-run/main_scene="res://src/node_2d.tscn"
+run/main_scene="res://src/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerVariables="*res://src/player_variables.gd"
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameState="*res://src/game_state.gd"
 
 [dialogic]
 
@@ -40,6 +41,10 @@ glossary/default_case_sensitive=true
 layout/mode=0
 variables={}
 
+[dialogue_manager]
+
+general/states=["GameState"]
+
 [display]
 
 window/size/viewport_width=1920
@@ -55,7 +60,7 @@ project/assembly_name="JakataUntold"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

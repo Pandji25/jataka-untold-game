@@ -1,13 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://batjrx7hgdwun"]
 
-[ext_resource type="Texture2D" uid="uid://p7kccqai7tp3" path="res://img/map2.png" id="1_6cja1"]
+[ext_resource type="Texture2D" uid="uid://xbp54pmquom0" path="res://img/map2.png" id="1_6cja1"]
 [ext_resource type="Script" path="res://src/Area2D.gd" id="1_n3fhu"]
-[ext_resource type="PackedScene" uid="uid://nobir4utxtkh" path="res://src/virtual_joystick.tscn" id="3_ok8eh"]
 [ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="3_oy72h"]
-[ext_resource type="Texture2D" uid="uid://buh213fv2d7qk" path="res://img/char_b.png" id="4_jww7l"]
+[ext_resource type="Texture2D" uid="uid://b5tsm0537bfxc" path="res://img/char_b.png" id="4_jww7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nctwh"]
 size = Vector2(154, 757)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufew5"]
+radius = 99.4082
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,7 +22,7 @@ texture = ExtResource("1_6cja1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(280, 416, 1632, 416, 1680, 1008, 1944, 736, 2408, 664, 2368, 360, 2336, -88, 2640, -104, 2616, -424, 3144, -424, 3296, -152, 3808, -152, 4472, -144, 4544, 64, 4568, 568, 4520, 760, 4568, 1824, 4160, 1728, 3624, 1760, 3296, 1616, 3200, 1360, 2848, 1128, 2144, 1256, 2016, 1480, 1872, 1560, 1792, 1784, 2168, 2152, 2672, 2248, 3152, 2248, 3488, 2184, 3664, 2296, 4224, 2344, 4224, 2608, 3584, 2600, 2680, 2600, 2216, 2528, 1456, 2456, 1144, 2688, 1272, 2880, 1208, 3208, 1592, 3704, 2416, 3760, 3328, 3704, 3976, 3688, 4160, 3744, 4440, 3656, 4592, 3728, 5176, 3672, 5208, 3312, 4896, 3080, 4816, 2768, 4496, 2752, 4512, 2424, 4896, 2416, 5056, 2040, 5288, 2016, 5984, 2288, 6024, 2024, 5896, 1408, 5248, 1608, 4856, 1848, 4736, 800, 5048, 760, 4808, 320, 5024, 16, 5384, 104, 5272, -408, 4744, -680, 5080, -1224, 4944, -1448, 4712, -1344, 3472, -1344, 3112, -1080, 2952, -848, 2592, -584, 2256, -608, 1608, -264, 1320, -312, 704, -136, 264, -224, 3496, -1552, 5128, -1616, 6216, 1952, 5200, 3880, 1376, 3840)
+polygon = PackedVector2Array(280, 416, 1632, 416, 1680, 1008, 1944, 736, 2408, 664, 2368, 360, 2336, -88, 2640, -104, 2616, -424, 3144, -424, 3296, -152, 3808, -152, 4472, -144, 4544, 64, 4568, 568, 4520, 760, 4568, 1824, 4160, 1728, 3624, 1760, 3296, 1616, 3200, 1360, 3111.41, 1301.61, 2848, 1128, 2144, 1256, 2016, 1480, 1872, 1560, 1792, 1784, 2168, 2152, 2672, 2248, 3152, 2248, 3488, 2184, 3664, 2296, 4224, 2344, 4224, 2608, 3584, 2600, 2680, 2600, 2216, 2528, 1456, 2456, 1144, 2688, 1272, 2880, 1208, 3208, 1592, 3704, 2416, 3760, 3328, 3704, 3976, 3688, 4160, 3744, 4440, 3656, 4592, 3728, 5176, 3672, 5208, 3312, 4896, 3080, 4816, 2768, 4496, 2752, 4512, 2424, 4896, 2416, 5056, 2040, 5288, 2016, 5984, 2288, 6024, 2024, 5896, 1408, 5248, 1608, 4856, 1848, 4736, 800, 5048, 760, 4808, 320, 5024, 16, 5384, 104, 5272, -408, 4744, -680, 5080, -1224, 4944, -1448, 4712, -1344, 3472, -1344, 3112, -1080, 2952, -848, 2592, -584, 2256, -608, 1608, -264, 1320, -312, 704, -136, 264, -224, 3496, -1552, 5128, -1616, 6216, 1952, 5200, 3880, 1376, 3840)
 
 [node name="Area2D2" type="Area2D" parent="StaticBody2D"]
 position = Vector2(0, -3)
@@ -32,16 +34,20 @@ next_spawn_position = Vector2(1988, 1054)
 position = Vector2(400, 114.5)
 shape = SubResource("RectangleShape2D_nctwh")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Virtual Joystick" parent="UI" instance=ExtResource("3_ok8eh")]
-
 [node name="Player" parent="." instance=ExtResource("3_oy72h")]
-position = Vector2(505, 240)
+position = Vector2(2921, 1502)
 
-[node name="CharB" type="Sprite2D" parent="."]
-position = Vector2(976, 280)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1904, 1948)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ufew5")
+
+[node name="CharB" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, -92)
 texture = ExtResource("4_jww7l")
 
 [connection signal="body_entered" from="StaticBody2D/Area2D2" to="StaticBody2D/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/Area2D2" to="StaticBody2D/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="StaticBody2D/Area2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="StaticBody2D/Area2D2" method="_on_area_2d_body_exited"]

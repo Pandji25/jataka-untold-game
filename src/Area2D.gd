@@ -18,3 +18,13 @@ func _on_body_entered(body:CharacterBody2D):
 #func _process(delta):
 	#if entered == true:                 # forest map
 		#get_tree().change_scene_to_file("res://node_2d1.tscn")
+
+
+func _on_area_2d_body_entered(body):
+	var talk_button = get_tree().get_root().get_node("res://src/player/UI/TalkButton").
+	talk_button.visible = true
+	print("it works :)")
+
+
+func _on_area_2d_body_exited(body):
+	pass # Replace with function body.
