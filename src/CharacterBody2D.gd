@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area):
 	$UI/TalkButton.visible = true
 	$UI/TalkButton.disabled = false
+	print(area)
 
 func _on_area_2d_area_exited(area):
 	$UI/TalkButton.visible = false
