@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://ddearu6ynh5x7"]
 
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_618wr"]
-[ext_resource type="Texture2D" uid="uid://bm081bn6p4y70" path="res://img/char_sheet_fix.png" id="2_f1b5g"]
+[ext_resource type="Texture2D" uid="uid://cldkbyd3lcmjf" path="res://img/char_sheet_fix.png" id="2_f1b5g"]
 [ext_resource type="PackedScene" uid="uid://nobir4utxtkh" path="res://src/virtual_joystick.tscn" id="3_7ojor"]
-[ext_resource type="Texture2D" uid="uid://byjm6g5c3rpac" path="res://img/talk.png" id="4_wa3ow"]
+[ext_resource type="Texture2D" uid="uid://boxq6je2lq7vg" path="res://img/talk.png" id="4_wa3ow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfklg"]
 radius = 57.3149

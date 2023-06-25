@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck6kbcto1lj04"]
+[gd_scene load_steps=16 format=3 uid="uid://ck6kbcto1lj04"]
 
-[ext_resource type="Texture2D" uid="uid://cgnxi55a8ydfu" path="res://img/logo_white_3.png" id="1_ir5i2"]
+[ext_resource type="Texture2D" uid="uid://bojvnoke5a4jy" path="res://img/logo_white_3.png" id="1_ir5i2"]
 [ext_resource type="Script" path="res://src/main_menu.gd" id="1_rud8x"]
-[ext_resource type="Texture2D" uid="uid://vomdmnq4uxhs" path="res://img/mandala.png" id="2_q8f0x"]
-[ext_resource type="Texture2D" uid="uid://jswv40uhj1iy" path="res://img/play_button.png" id="3_xhnok"]
+[ext_resource type="Texture2D" uid="uid://cu75y1si2hlgc" path="res://img/menubg2.png" id="2_00ou6"]
+[ext_resource type="Texture2D" uid="uid://bgpjph3nf56wv" path="res://img/mandala.png" id="2_q8f0x"]
+[ext_resource type="Texture2D" uid="uid://bwrtkdq5csq8d" path="res://img/play_button.png" id="3_xhnok"]
 [ext_resource type="Script" path="res://src/Selection.gd" id="5_igtvw"]
+[ext_resource type="Texture2D" uid="uid://bgk30gduxwa2b" path="res://img/arrow_select.png" id="5_j4w8q"]
 [ext_resource type="PackedScene" uid="uid://4y7k2hlxxeab" path="res://src/level_select.tscn" id="5_x6ley"]
 
 [sub_resource type="Animation" id="Animation_5e1oj"]
@@ -277,6 +279,21 @@ grow_vertical = 2
 script = ExtResource("1_rud8x")
 metadata/_edit_lock_ = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_00ou6")
+
 [node name="Selection" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -295,30 +312,18 @@ metadata/_edit_lock_ = true
 [node name="LevelSelect2" parent="Selection" instance=ExtResource("5_x6ley")]
 visible = false
 layout_mode = 1
+chapter_title = "Chapter 2: Locked"
+chapter_description = "Finish the previous chapter to play this one!"
+locked = true
 metadata/_edit_lock_ = true
-
-[node name="ChapterTitle" parent="Selection/LevelSelect2/VBoxContainer2/VBoxContainer" index="0"]
-text = "CHAPTER LOCKED"
-
-[node name="ChapterDescription" parent="Selection/LevelSelect2/VBoxContainer2/VBoxContainer/GridContainer" index="1"]
-text = "lorem ipsum dolor sit amet"
-
-[node name="PlayButton" parent="Selection/LevelSelect2/VBoxContainer2" index="1"]
-disabled = true
 
 [node name="LevelSelect3" parent="Selection" instance=ExtResource("5_x6ley")]
 visible = false
 layout_mode = 1
+chapter_title = "Chapter 3: Locked"
+chapter_description = "Finish the previous chapter to play this one!"
+locked = true
 metadata/_edit_lock_ = true
-
-[node name="ChapterTitle" parent="Selection/LevelSelect3/VBoxContainer2/VBoxContainer" index="0"]
-text = "CHAPTER LOCKED 2"
-
-[node name="ChapterDescription" parent="Selection/LevelSelect3/VBoxContainer2/VBoxContainer/GridContainer" index="1"]
-text = "lorem ipsum dolor sit amet"
-
-[node name="PlayButton" parent="Selection/LevelSelect3/VBoxContainer2" index="1"]
-disabled = true
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 1
@@ -345,7 +350,7 @@ offset_top = -59.5
 offset_bottom = 59.5
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("3_xhnok")
+texture_normal = ExtResource("5_j4w8q")
 
 [node name="LButton" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -356,7 +361,7 @@ offset_top = -59.5
 offset_right = 78.0
 offset_bottom = 59.5
 grow_vertical = 2
-texture_normal = ExtResource("3_xhnok")
+texture_normal = ExtResource("5_j4w8q")
 flip_h = true
 
 [node name="Intro" type="Control" parent="."]
@@ -442,7 +447,3 @@ libraries = {
 [connection signal="pressed" from="Buttons/RButton" to="Selection" method="_on_r_button_pressed"]
 [connection signal="pressed" from="Buttons/LButton" to="Selection" method="_on_l_button_pressed"]
 [connection signal="pressed" from="Intro/Play/PlayButton" to="." method="_on_play_button_pressed"]
-
-[editable path="Selection/LevelSelect"]
-[editable path="Selection/LevelSelect2"]
-[editable path="Selection/LevelSelect3"]
