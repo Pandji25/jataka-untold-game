@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxlab4tcto7ai"]
+
+[ext_resource type="Script" path="res://src/UI.gd" id="1_45mcb"]
+[ext_resource type="PackedScene" uid="uid://ciwddm1ed0kvw" path="res://src/dialogue_balloon.tscn" id="2_a7ir6"]
+[ext_resource type="PackedScene" uid="uid://nobir4utxtkh" path="res://src/virtual_joystick.tscn" id="2_p3oaj"]
+[ext_resource type="Texture2D" uid="uid://boxq6je2lq7vg" path="res://img/talk.png" id="3_p31cj"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_45mcb")
+Balloon = ExtResource("2_a7ir6")
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("2_p3oaj")]
+metadata/_edit_use_anchors_ = true
+
+[node name="TalkButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1428.0
+offset_top = 676.0
+offset_right = 1706.0
+offset_bottom = 944.0
+disabled = true
+texture_normal = ExtResource("3_p31cj")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TalkButton" to="." method="_on_talk_button_pressed"]

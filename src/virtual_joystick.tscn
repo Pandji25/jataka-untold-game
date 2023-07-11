@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ljtl6m1h813j" path="res://img/joystick_base_outline.png" id="2_2l5wd"]
 [ext_resource type="Texture2D" uid="uid://esms5ta23kko" path="res://img/joystick_tip_arrows.png" id="3_le6jw"]
 
-[node name="Virtual Joystick" type="Control"]
+[node name="VirtualJoystick" type="Control"]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0

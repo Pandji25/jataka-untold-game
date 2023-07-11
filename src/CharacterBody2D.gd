@@ -54,13 +54,20 @@ func _process(delta: float) -> void:
 			
 
 func _on_area_2d_area_entered(area):
-	$UI/TalkButton.visible = true
-	$UI/TalkButton.disabled = false
-	print(area)
+	if area.is_in_group("NPC"):
+		var ui = get_node_or_null("../UI")
+		
+		ui.dialogue_resource = area.dialogue_resource
+		ui.title = area.title
+		
+		ui.get_node("TalkButton").set_disabled(false)
+		ui.get_node("TalkButton").set_visible(true)
 
 func _on_area_2d_area_exited(area):
-	$UI/TalkButton.visible = false
-	$UI/TalkButton.disabled = true
+	if area.is_in_group("NPC"):
+		var ui = get_node_or_null("../UI")
+		
+		ui.get_node("TalkButton").set_disabled(true)
+		ui.get_node("TalkButton").set_visible(false)
 
-func _on_talk_button_pressed():
-	pass
+
