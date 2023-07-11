@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://batjrx7hgdwun"]
 
-[ext_resource type="Texture2D" uid="uid://xbp54pmquom0" path="res://img/map2.png" id="1_6cja1"]
+[ext_resource type="Texture2D" uid="uid://p7kccqai7tp3" path="res://img/map2.png" id="1_6cja1"]
 [ext_resource type="Script" path="res://src/Area2D.gd" id="1_n3fhu"]
 [ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="3_oy72h"]
-[ext_resource type="Texture2D" uid="uid://b5tsm0537bfxc" path="res://img/char_b.png" id="4_jww7l"]
+[ext_resource type="Texture2D" uid="uid://buh213fv2d7qk" path="res://img/char_b.png" id="4_jww7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nctwh"]
 size = Vector2(154, 757)
