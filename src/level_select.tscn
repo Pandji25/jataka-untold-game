@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/level_select.gd" id="1_naca2"]
 [ext_resource type="Theme" uid="uid://babul5h0cbys" path="res://src/main_menu.tres" id="1_qncf4"]
-[ext_resource type="Texture2D" uid="uid://lg2e123lfffq" path="res://img/char_fr.png" id="2_vl0s2"]
+[ext_resource type="Texture2D" uid="uid://b80jbftdofq84" path="res://img/level_img.png" id="3_anbc0"]
 [ext_resource type="Texture2D" uid="uid://bwrtkdq5csq8d" path="res://img/play_button.png" id="3_pqfrn"]
 
 [node name="LevelSelect" type="Control"]
@@ -13,22 +13,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_naca2")
+chapter_title = "Chapter 1: Ruru Deer"
+chapter_preview = ExtResource("3_anbc0")
+chapter_description = "A deer saved a man's life from drowning, but can the deer trust him to save it's own?"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.459375
+anchor_right = 0.540625
 anchor_bottom = 1.0
 offset_left = -417.0
 offset_right = 417.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 81
+theme_override_constants/separation = 46
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 226
+theme_override_constants/separation = 19
 
 [node name="ChapterTitle" type="Label" parent="VBoxContainer2/VBoxContainer"]
 layout_mode = 2
@@ -36,25 +40,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme = ExtResource("1_qncf4")
 theme_override_font_sizes/font_size = 72
-text = "CHAPTER 1: RURU JATAKA"
+text = "Chapter 1: Ruru Deer"
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer2/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChapterImage" type="TextureRect" parent="VBoxContainer2/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+texture = ExtResource("3_anbc0")
 
-[node name="ChapterImage" type="TextureRect" parent="VBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_vl0s2")
-
-[node name="ChapterDescription" type="Label" parent="VBoxContainer2/VBoxContainer/GridContainer"]
+[node name="ChapterDescription" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_qncf4")
 theme_override_font_sizes/font_size = 32
-text = "A mystical deer saves a man from drowning
-in the river, but can the deer trust the man it's
-own life?"
+text = "A deer saved a man's life from drowning, but can the deer trust him to save it's own?"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="PlayButton" type="TextureButton" parent="VBoxContainer2"]
 layout_mode = 2
