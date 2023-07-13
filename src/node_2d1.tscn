@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://batjrx7hgdwun"]
+[gd_scene load_steps=10 format=3 uid="uid://batjrx7hgdwun"]
 
-[ext_resource type="Texture2D" uid="uid://xbp54pmquom0" path="res://img/map2.png" id="1_6cja1"]
+[ext_resource type="Texture2D" uid="uid://p7kccqai7tp3" path="res://img/map2.png" id="1_6cja1"]
 [ext_resource type="Script" path="res://src/Area2D.gd" id="1_n3fhu"]
 [ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="3_oy72h"]
-[ext_resource type="Texture2D" uid="uid://b5tsm0537bfxc" path="res://img/char_b.png" id="4_jww7l"]
+[ext_resource type="Script" path="res://src/NPC.gd" id="4_8ce6d"]
+[ext_resource type="Texture2D" uid="uid://buh213fv2d7qk" path="res://img/char_b.png" id="4_jww7l"]
+[ext_resource type="Resource" uid="uid://gte2uvy15kry" path="res://src/test_dialogue.dialogue" id="5_mo8qx"]
+[ext_resource type="PackedScene" uid="uid://bxlab4tcto7ai" path="res://src/ui.tscn" id="7_1brqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nctwh"]
 size = Vector2(154, 757)
@@ -37,17 +40,20 @@ shape = SubResource("RectangleShape2D_nctwh")
 [node name="Player" parent="." instance=ExtResource("3_oy72h")]
 position = Vector2(2921, 1502)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="NPC" type="Area2D" parent="." groups=["NPC"]]
 position = Vector2(1904, 1948)
+script = ExtResource("4_8ce6d")
+title = "start"
+dialogue_resource = ExtResource("5_mo8qx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
 shape = SubResource("CircleShape2D_ufew5")
 
-[node name="CharB" type="Sprite2D" parent="Area2D"]
+[node name="CharB" type="Sprite2D" parent="NPC"]
 position = Vector2(1, -92)
 texture = ExtResource("4_jww7l")
 
+[node name="UI" parent="." instance=ExtResource("7_1brqs")]
+
 [connection signal="body_entered" from="StaticBody2D/Area2D2" to="StaticBody2D/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/Area2D2" to="StaticBody2D/Area2D2" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D" to="StaticBody2D/Area2D2" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="StaticBody2D/Area2D2" method="_on_area_2d_body_exited"]
