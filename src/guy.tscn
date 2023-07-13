@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpimsma7uhb0e"]
+
+[ext_resource type="Texture2D" uid="uid://ewi7sd08cj4v" path="res://img/portrait.png" id="1_ef3yp"]
+
+[node name="Guy" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -336)
+scale = Vector2(0.816039, 0.816039)
+texture = ExtResource("1_ef3yp")
