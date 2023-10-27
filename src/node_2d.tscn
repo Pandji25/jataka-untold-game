@@ -11,7 +11,6 @@ size = Vector2(97.5, 493)
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(-208, 184)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]

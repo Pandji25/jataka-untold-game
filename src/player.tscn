@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddearu6ynh5x7"]
+[gd_scene load_steps=15 format=3 uid="uid://ddearu6ynh5x7"]
 
 [ext_resource type="Script" path="res://src/CharacterBody2D.gd" id="1_618wr"]
 [ext_resource type="Texture2D" uid="uid://cldkbyd3lcmjf" path="res://img/char_sheet_fix.png" id="2_f1b5g"]
+[ext_resource type="AudioStream" uid="uid://cyvid8j8qg0m" path="res://audio/gravel_walk_1.wav" id="3_pmyar"]
+[ext_resource type="AudioStream" uid="uid://duxwbsd761r8n" path="res://audio/gravel_walk_2.wav" id="4_xq2jw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfklg"]
 radius = 57.3149
@@ -22,6 +24,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 0, 2, 0]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_w6j7w"]
 resource_name = "walk_left"
@@ -51,6 +72,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_flt5o"]
 resource_name = "walk_left_down"
@@ -80,6 +120,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_qpw1e"]
 resource_name = "walk_left_up"
@@ -109,6 +168,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nxlmo"]
 resource_name = "walk_right"
@@ -138,6 +216,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_4fslh"]
 resource_name = "walk_right_down"
@@ -167,6 +264,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5pbxc"]
 resource_name = "walk_right_up"
@@ -196,6 +312,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_vyxhy"]
 resource_name = "walk_up"
@@ -213,6 +348,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [13, 12, 14, 12]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pmyar")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xq2jw")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyhlk"]
 _data = {
@@ -227,21 +381,23 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_618wr")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -114)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 115)
 shape = SubResource("CircleShape2D_vfklg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 115)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_vfklg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -114)
 texture = ExtResource("2_f1b5g")
 hframes = 3
 vframes = 5
@@ -254,8 +410,13 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(0, -114)
+enabled = false
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

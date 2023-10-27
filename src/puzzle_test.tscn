@@ -1,0 +1,161 @@
+[gd_scene load_steps=20 format=3 uid="uid://brwqhlvwryyep"]
+
+[ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="1_ha528"]
+[ext_resource type="Script" path="res://src/puzzle_test.gd" id="1_n085t"]
+[ext_resource type="PackedScene" uid="uid://bxlab4tcto7ai" path="res://src/ui.tscn" id="2_ip2s4"]
+[ext_resource type="Script" path="res://src/Penangkal.gd" id="3_liht2"]
+[ext_resource type="Resource" uid="uid://c0cq2bjr1kc1y" path="res://src/penangkal.dialogue" id="4_o0pg7"]
+[ext_resource type="PackedScene" uid="uid://blgf33ceixvxt" path="res://src/choice_balloon.tscn" id="4_q3v5i"]
+[ext_resource type="Texture2D" uid="uid://wxp1gr7uyk5p" path="res://img/quest_mainan/penangkal.png" id="5_ajiv7"]
+[ext_resource type="Texture2D" uid="uid://q751eyr3v0xd" path="res://img/toy.png" id="6_232df"]
+[ext_resource type="Script" path="res://src/Toy.gd" id="7_pok88"]
+[ext_resource type="Resource" uid="uid://8pvneg7lxhvf" path="res://src/toy.dialogue" id="8_q2ldm"]
+[ext_resource type="Script" path="res://src/NPC.gd" id="9_d6mo5"]
+[ext_resource type="Script" path="res://src/Ular.gd" id="10_7dn6y"]
+[ext_resource type="Texture2D" uid="uid://c511xd8whnmbo" path="res://img/quest_mainan/ular.png" id="11_k2ukt"]
+[ext_resource type="Resource" uid="uid://b2sb2t2b4kidn" path="res://src/snake.dialogue" id="12_ps4gd"]
+[ext_resource type="Script" path="res://src/TestNode.gd" id="13_fp54y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_48mlu"]
+radius = 51.0392
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgs21"]
+radius = 79.1012
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ra31u"]
+radius = 57.2189
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7ryr"]
+radius = 128.098
+
+[node name="PuzzleTest" type="Node2D"]
+script = ExtResource("1_n085t")
+
+[node name="Player" parent="." instance=ExtResource("1_ha528")]
+position = Vector2(977, 709)
+scale = Vector2(0.68, 0.68)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(0, -100)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[node name="UI" parent="." instance=ExtResource("2_ip2s4")]
+Balloon = ExtResource("4_q3v5i")
+
+[node name="Toy" type="Sprite2D" parent="."]
+position = Vector2(1508, 901)
+texture = ExtResource("6_232df")
+script = ExtResource("7_pok88")
+dialogue_resource = ExtResource("8_q2ldm")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Toy" groups=["NPC"]]
+script = ExtResource("9_d6mo5")
+title = "start"
+dialogue_resource = ExtResource("8_q2ldm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toy/Area2D"]
+shape = SubResource("CircleShape2D_48mlu")
+
+[node name="Penangkal" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(1496, 569)
+script = ExtResource("3_liht2")
+dialogue_resource = ExtResource("4_o0pg7")
+title = "start"
+snake = NodePath("Ular")
+is_empty = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal"]
+shape = SubResource("CircleShape2D_lgs21")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal"]
+position = Vector2(59, -99)
+texture = ExtResource("5_ajiv7")
+
+[node name="Ular" type="StaticBody2D" parent="Penangkal"]
+position = Vector2(224, -211)
+script = ExtResource("10_7dn6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal/Ular"]
+texture = ExtResource("11_k2ukt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal/Ular"]
+shape = SubResource("CircleShape2D_ra31u")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal/Ular" groups=["NPC"]]
+script = ExtResource("9_d6mo5")
+title = "snake"
+dialogue_resource = ExtResource("12_ps4gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal/Ular/InteractArea"]
+shape = SubResource("CircleShape2D_c7ryr")
+
+[node name="Penangkal2" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(1694, 717)
+script = ExtResource("3_liht2")
+dialogue_resource = ExtResource("4_o0pg7")
+title = "start"
+snake = NodePath("Ular2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2"]
+shape = SubResource("CircleShape2D_lgs21")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal2"]
+position = Vector2(59, -99)
+texture = ExtResource("5_ajiv7")
+
+[node name="Ular2" type="StaticBody2D" parent="Penangkal2"]
+position = Vector2(246, -179)
+script = ExtResource("10_7dn6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal2/Ular2"]
+texture = ExtResource("11_k2ukt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2/Ular2"]
+shape = SubResource("CircleShape2D_ra31u")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal2/Ular2" groups=["NPC"]]
+script = ExtResource("9_d6mo5")
+title = "snake"
+dialogue_resource = ExtResource("12_ps4gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2/Ular2/InteractArea"]
+shape = SubResource("CircleShape2D_c7ryr")
+
+[node name="Penangkal3" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(1887, 899)
+script = ExtResource("3_liht2")
+dialogue_resource = ExtResource("4_o0pg7")
+title = "start"
+snake = NodePath("Ular3")
+is_empty = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3"]
+shape = SubResource("CircleShape2D_lgs21")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal3"]
+position = Vector2(59, -99)
+texture = ExtResource("5_ajiv7")
+
+[node name="Ular3" type="StaticBody2D" parent="Penangkal3"]
+position = Vector2(264, -167)
+script = ExtResource("10_7dn6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal3/Ular3"]
+texture = ExtResource("11_k2ukt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3/Ular3"]
+shape = SubResource("CircleShape2D_ra31u")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal3/Ular3" groups=["NPC"]]
+script = ExtResource("9_d6mo5")
+title = "snake"
+dialogue_resource = ExtResource("12_ps4gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3/Ular3/InteractArea"]
+shape = SubResource("CircleShape2D_c7ryr")
+
+[node name="TestNode" type="Node" parent="."]
+script = ExtResource("13_fp54y")

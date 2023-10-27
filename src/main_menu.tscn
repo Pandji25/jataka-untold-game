@@ -306,7 +306,7 @@ metadata/_edit_lock_ = true
 
 [node name="LevelSelect" parent="Selection" instance=ExtResource("5_x6ley")]
 layout_mode = 1
-scene_path = "res://src/node_2d1.tscn"
+scene_path = "res://src/village.tscn"
 metadata/_edit_lock_ = true
 
 [node name="LevelSelect2" parent="Selection" instance=ExtResource("5_x6ley")]

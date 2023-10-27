@@ -1,0 +1,36 @@
+~ start
+
+if flower_status == true:
+	if flower_gave == "Bapak Tua":
+		=> flower_returned
+	=> flower_get
+
+if request_done == false:
+	Bapak Tua: Permisi, Nak. Apakah saya boleh minta bantu?
+	Bapak Tua: Keluarga anak saya akan datang mengunjungi desa ini dan saya ingin memberikan sebuah mainan untuk cucuku.
+	Bapak Tua: Akan tetapi, sepertinya aku tidak sengaja menjatuhkan mainan tersebut di sawah.
+	Bapak Tua: Jika kamu sedang berjalan ke arah sawah, bolehkah kamu mencarikannya untuk ku?
+	Bapak Tua: Aku akan sangat berterima kasih.
+	set request_done = true
+else:
+	Bapak Tua: Aku akan menunggu di sini, terima kasih atas bantuannya ya, Nak.
+
+=> END
+
+~ flower_get
+
+Bapak Tua: Apakah kamu sudah menemukan mainan untuk cucuku?
+- Ya [if flower_has == true]
+	=> flower_returned
+- Tidak
+	Bapak Tua: Ah, begitu... Baiklah.
+
+=> END
+
+~ flower_returned
+
+Bapak Tua: Oh terima kasih banyak, Nak. Aku akan selalu mendoakan mu.
+set flower_has = false
+set flower_gave = "Bapak Tua"
+
+=> END

@@ -1,0 +1,23 @@
+~ start
+
+if axe_has:
+	=> axe_ready
+
+Kau: Semak-semak ini menghalangi jalan ke hutan.
+Kau: Terlalu tebal untuk dilewati. Aku harus menemukan cara untuk menyinkirkan semak-semak!
+
+=> END
+
+~ axe_ready
+
+Kau: Baik, mari coba gunakan kapak ini untuk membuka jalan.
+...
+...
+...
+
+~ vine_chopped
+
+Kau: Agh, cukup melelahkan.
+Kau: Sepertinya aku berhasil membuka jalan ke hutan.
+
+=> END

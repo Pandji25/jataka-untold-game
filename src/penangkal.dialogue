@@ -1,0 +1,64 @@
+~ start
+
+if interacting_object.is_empty:
+	=> empty
+else:
+	=> encounter
+
+#if repellant_status == "encounter"
+#	=> encounter
+#elif repellant_status == "take"
+#	=> take
+#elif repellant_status == "place"
+#	if is_carrying_repellant
+#		=> invalid
+#	else
+#		=> place
+
+~ encounter
+
+Kau: Hmm, apa ini?
+Kau: Sepertinya semacam penangkal hewan. Benda ini mengeluarkan bau yang tajam.
+Kau: Mungkin aku bisa memindahkannya.
+(Sekarang kau bisa memindahkan penangkal ular ini ke tempat lain.)
+
+#set repellant_status = "take"
+#do repellant_status_changed.emit(interacting_object, "take")
+
+=> END
+
+~ taking
+
+
+if interacting_object.is_empty:
+	=> empty
+else:
+	Kau mengambil penangkal ular.
+	
+	do emit("repellant_status_changed", interacting_object, "placing", true)
+=> END
+
+~ placing
+
+
+if interacting_object.is_empty:
+	Kau meletakkan penangkal ular
+	
+	do emit("repellant_status_changed", interacting_object, "taking", false)
+else:
+	=> invalid
+
+
+=> END
+
+~ invalid
+
+Kau tak bisa mengambil lebih dari satu penangkal ular sekaligus.
+
+=> END
+
+~ empty
+
+Kau: Sepertinya aku bisa meletakkan sesuatu di sini.
+
+=> END

@@ -1,0 +1,20 @@
+~ start
+
+if axe_has == true:
+	=> axe_ready
+
+Ah, ada pohon tumbang yang menghalangi jalan!
+Aku harus menemukan cara untuk memindahkannya.
+
+=> END
+
+~ axe_ready
+
+Baik, mari coba kapak ini.
+
+~ tree_chopped
+
+Berhasil!
+Sekarang aku bisa pergi lebih dalam ke hutan.
+
+=> END

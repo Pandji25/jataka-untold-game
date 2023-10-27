@@ -1,0 +1,165 @@
+[gd_scene load_steps=10 format=3 uid="uid://blgf33ceixvxt"]
+
+[ext_resource type="Script" path="res://src/choice_balloon.gd" id="1_f0fkh"]
+[ext_resource type="Theme" uid="uid://babul5h0cbys" path="res://src/main_menu.tres" id="2_2ryor"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_pl8sj"]
+[ext_resource type="Texture2D" uid="uid://bwrtkdq5csq8d" path="res://img/play_button.png" id="3_cdomj"]
+[ext_resource type="Texture2D" uid="uid://cl6iibfipb84m" path="res://img/ui_stuff/choice_button.png" id="4_b1dny"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2n14a"]
+texture = ExtResource("4_b1dny")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dh8e3"]
+texture = ExtResource("4_b1dny")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lsir"]
+texture = ExtResource("4_b1dny")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obvck"]
+
+[node name="ChoiceBalloon" type="CanvasLayer"]
+script = ExtResource("1_f0fkh")
+
+[node name="CenterPos" type="Node2D" parent="."]
+position = Vector2(960, 1080)
+
+[node name="Slot0" type="Marker2D" parent="CenterPos"]
+position = Vector2(-667, 0)
+
+[node name="Slot1" type="Marker2D" parent="CenterPos"]
+position = Vector2(667, 0)
+
+[node name="Balloon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -441.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0901961, 0.129412, 0.803922)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Balloon/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 72
+
+[node name="CharLabel" type="RichTextLabel" parent="Balloon/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 19
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_2ryor")
+theme_override_font_sizes/normal_font_size = 32
+text = "LOREM IPSUM DOLOR SIT AMET HALORHALROHALORAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+script = ExtResource("2_pl8sj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -26.0
+offset_right = 129.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_2ryor")
+theme_override_font_sizes/font_size = 32
+text = "Pilih jawabanmu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResponseList" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NextButton" type="TextureButton" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -179.0
+offset_right = -70.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_cdomj")
+
+[node name="ResponseTemplate" type="Button" parent="."]
+custom_minimum_size = Vector2(751, 654)
+offset_left = 42.0
+offset_top = 1109.0
+offset_right = 793.0
+offset_bottom = 1763.0
+theme = ExtResource("2_2ryor")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_2n14a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dh8e3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5lsir")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_obvck")
+text_overrun_behavior = 2
+metadata/_edit_group_ = true
+
+[node name="ResponseText" type="Label" parent="ResponseTemplate"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 88.0
+offset_right = -129.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Lorem ipsum dolor sit amet"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 2
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

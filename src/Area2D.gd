@@ -21,7 +21,7 @@ func _on_body_entered(body:CharacterBody2D):
 
 
 func _on_area_2d_body_entered(body):
-	var talk_button = get_tree().get_root().get_node("res://src/player/UI/TalkButton").
+	var talk_button = get_tree().get_root().get_node("res://src/player/UI/TalkButton")
 	talk_button.visible = true
 	print("it works :)")
 

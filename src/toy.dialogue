@@ -1,0 +1,13 @@
+~ start
+
+Sebuah kuda kayu.
+if request_done:
+	Apakah ini milik Bapak Tua tadi?
+
+~ toy_taken
+
+Sebaiknya aku ambil.
+set flower_status = true
+set flower_has = true
+
+=> END

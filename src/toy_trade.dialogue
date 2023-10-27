@@ -1,0 +1,26 @@
+~ start
+
+if flower_status == true:
+	=> flower_get
+
+??? : Selamat siang.
+
+=> END
+
+~ flower_get
+
+???: Ah, selamat siang, Kawan.
+Kolektor: Perkenalkan, aku seorang kolektor.
+Kolektor: Saya datang ke desa ini untuk mencari sesuatu yang dapat saya koleksi.
+Kolektor: Dan sepertinya, anda membawa sesuatu yang menarik perhatianku
+Kolektor: Bagaimana jika saya menukarkan kapakku ini untuk mainan di tanganmu?
+- Ya [if flower_has == true]
+	Kolektor: Bagus! Tenang saja kawan, ini adalah barter yang bagus untuk mu.
+	set flower_has = false
+	set axe_has = true
+	set flower_gave = "Kolektor"
+- Tidak
+	Kolektor: Ah, sayang sekali. Baiklah, dapat dimengerti kawan.
+
+
+=> END

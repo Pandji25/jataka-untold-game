@@ -1,17 +1,14 @@
 ~ start
 
-do add_portrait("guy", 0)
+do add_portrait("guy", 1)
 do call_portrait("guy")
 Guy: [[Hi|Hello|Howdy]], this is some dialogue.
 Guy: Here are some choices.
+What will you do?
 - First one
 	Guy: You picked the first one.
 - Second one
 	Guy: You picked the second one.
-- Third one
-	This is a dialogue without a character.
-- Start again => start
-- End the conversation => END
 Guy: For more information see the online documentation.
 do remove_portrait("guy")
 

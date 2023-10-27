@@ -1,0 +1,458 @@
+[gd_scene load_steps=46 format=3 uid="uid://p8vbd5c16jx0"]
+
+[ext_resource type="PackedScene" uid="uid://ddearu6ynh5x7" path="res://src/player.tscn" id="1_u8wnh"]
+[ext_resource type="PackedScene" uid="uid://bxlab4tcto7ai" path="res://src/ui.tscn" id="2_rxebm"]
+[ext_resource type="Texture2D" uid="uid://wmyytk0hp405" path="res://img/more_level_concept_art_1.png" id="3_3yc1x"]
+[ext_resource type="PackedScene" uid="uid://blgf33ceixvxt" path="res://src/choice_balloon.tscn" id="3_alide"]
+[ext_resource type="Texture2D" uid="uid://bjjafkwfudmpq" path="res://img/more_level_concept_art_2.png" id="4_nxh2u"]
+[ext_resource type="Texture2D" uid="uid://cru4oh7g8aaap" path="res://img/env/map_1-1.png" id="5_bqfvw"]
+[ext_resource type="Texture2D" uid="uid://chxc4q4xykcjy" path="res://img/env/map_1-2.png" id="6_1d84q"]
+[ext_resource type="Texture2D" uid="uid://b5t6byvy45sld" path="res://img/env/map_1.png" id="7_cght0"]
+[ext_resource type="Texture2D" uid="uid://wxp1gr7uyk5p" path="res://img/quest_mainan/penangkal.png" id="9_5cp6x"]
+[ext_resource type="Script" path="res://src/Penangkal.gd" id="9_o21hk"]
+[ext_resource type="Resource" uid="uid://c0cq2bjr1kc1y" path="res://src/penangkal.dialogue" id="10_m6sva"]
+[ext_resource type="Texture2D" uid="uid://c511xd8whnmbo" path="res://img/quest_mainan/ular.png" id="10_ogcf7"]
+[ext_resource type="Script" path="res://src/Ular.gd" id="11_b8l35"]
+[ext_resource type="Texture2D" uid="uid://c3akv4y7r6bsy" path="res://img/quest_mainan/kolektor.png" id="11_ho7dd"]
+[ext_resource type="Texture2D" uid="uid://bq6xt7tm5qvae" path="res://img/quest_mainan/Kakek.png" id="12_orbcr"]
+[ext_resource type="Texture2D" uid="uid://c5dolgvuqpstd" path="res://img/quest_mainan/mainan_kuda.png" id="13_h01vi"]
+[ext_resource type="Script" path="res://src/NPC.gd" id="13_jsmaw"]
+[ext_resource type="PackedScene" uid="uid://0d6dp21d5cuj" path="res://src/proximity.tscn" id="15_swu8m"]
+[ext_resource type="Script" path="res://src/ToyHorse.gd" id="15_tp6qg"]
+[ext_resource type="Resource" uid="uid://b2sb2t2b4kidn" path="res://src/snake.dialogue" id="15_uaxnr"]
+[ext_resource type="Resource" uid="uid://8pvneg7lxhvf" path="res://src/toy.dialogue" id="16_ovh8r"]
+[ext_resource type="Resource" uid="uid://yklagps50wee" path="res://src/toy_trade.dialogue" id="17_2eq40"]
+[ext_resource type="Texture2D" uid="uid://e7cusu2br7ne" path="res://img/interactible.png" id="18_eqc5u"]
+[ext_resource type="Script" path="res://src/Kakek.gd" id="19_abucc"]
+[ext_resource type="Resource" uid="uid://c8xhtsaidd1he" path="res://src/toy_request.dialogue" id="19_cgxly"]
+[ext_resource type="Script" path="res://src/Kolektor.gd" id="20_5t5pd"]
+[ext_resource type="Resource" uid="uid://cs12eaui8mjpl" path="res://src/loud_noise.dialogue" id="20_s4owc"]
+[ext_resource type="Texture2D" uid="uid://cvgi1jmlq6jf1" path="res://img/interactible-1.png" id="23_k84x8"]
+[ext_resource type="Script" path="res://src/AnimalBreak.gd" id="24_hjnep"]
+[ext_resource type="Texture2D" uid="uid://bpwmxpwiuipt6" path="res://img/quest_mainan/vines.png" id="26_lt06c"]
+[ext_resource type="Resource" uid="uid://113fy5kjbhgw" path="res://src/kapak.dialogue" id="26_wl70l"]
+[ext_resource type="Script" path="res://src/Vines.gd" id="27_f4wxe"]
+[ext_resource type="Texture2D" uid="uid://co1g8l8gk35ts" path="res://img/quest_mainan/footprints.png" id="27_lkvtt"]
+[ext_resource type="Texture2D" uid="uid://ct466rrlgy6al" path="res://img/quest_mainan/vines_broken.png" id="28_6cp55"]
+[ext_resource type="Texture2D" uid="uid://cld6tw3jx1y2b" path="res://img/env/map_2_rev2.png" id="35_7kb38"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sps3c"]
+radius = 79.1012
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bstuj"]
+radius = 102.591
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5fjf"]
+radius = 128.098
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yh1d5"]
+radius = 217.389
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7toh"]
+radius = 78.0064
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f1p3"]
+radius = 128.004
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3f3a"]
+size = Vector2(547.879, 102.483)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hevj7"]
+size = Vector2(454.06, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx16t"]
+size = Vector2(379, 312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oihbp"]
+size = Vector2(332, 507)
+
+[node name="VillageRedux" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_u8wnh")]
+position = Vector2(5443, 7018)
+scale = Vector2(0.68, 0.68)
+speed = 500.0
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(0, -100)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[node name="UI" parent="." instance=ExtResource("2_rxebm")]
+Balloon = ExtResource("3_alide")
+
+[node name="MoreLevelConceptArt1" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(2051, 1661)
+scale = Vector2(1.29247, 1.29247)
+texture = ExtResource("3_3yc1x")
+metadata/_edit_lock_ = true
+
+[node name="MoreLevelConceptArt2" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(3834, 6637)
+scale = Vector2(1.82526, 1.82526)
+texture = ExtResource("4_nxh2u")
+metadata/_edit_lock_ = true
+
+[node name="Map1-2" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(3788, 1941)
+texture = ExtResource("6_1d84q")
+
+[node name="Map1-1" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(525, 662)
+texture = ExtResource("5_bqfvw")
+
+[node name="Penangkal" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(7290, 5609)
+script = ExtResource("9_o21hk")
+dialogue_resource = ExtResource("10_m6sva")
+title = "start"
+snake = NodePath("Ular")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal"]
+shape = SubResource("CircleShape2D_sps3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal"]
+position = Vector2(33, -68)
+texture = ExtResource("9_5cp6x")
+
+[node name="Ular" type="StaticBody2D" parent="Penangkal"]
+position = Vector2(227, -129)
+script = ExtResource("11_b8l35")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal/Ular"]
+texture = ExtResource("10_ogcf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal/Ular"]
+shape = SubResource("CircleShape2D_bstuj")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal/Ular" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "snake"
+dialogue_resource = ExtResource("15_uaxnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal/Ular/InteractArea"]
+shape = SubResource("CircleShape2D_d5fjf")
+
+[node name="Proximity3" parent="Penangkal" node_paths=PackedStringArray("image") instance=ExtResource("15_swu8m")]
+position = Vector2(-29, 27)
+image = NodePath("ProxInteract")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal/Proximity3"]
+shape = SubResource("CircleShape2D_yh1d5")
+
+[node name="ProxInteract" type="Sprite2D" parent="Penangkal/Proximity3"]
+position = Vector2(62, -198)
+texture = ExtResource("18_eqc5u")
+
+[node name="Penangkal2" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(6548, 6116)
+script = ExtResource("9_o21hk")
+dialogue_resource = ExtResource("10_m6sva")
+title = "start"
+snake = NodePath("Ular")
+is_empty = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2"]
+shape = SubResource("CircleShape2D_sps3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal2"]
+position = Vector2(33, -68)
+texture = ExtResource("9_5cp6x")
+
+[node name="Ular" type="StaticBody2D" parent="Penangkal2"]
+position = Vector2(227, -129)
+script = ExtResource("11_b8l35")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal2/Ular"]
+texture = ExtResource("10_ogcf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2/Ular"]
+shape = SubResource("CircleShape2D_bstuj")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal2/Ular" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "snake"
+dialogue_resource = ExtResource("15_uaxnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2/Ular/InteractArea"]
+shape = SubResource("CircleShape2D_d5fjf")
+
+[node name="Proximity2" parent="Penangkal2" node_paths=PackedStringArray("image") instance=ExtResource("15_swu8m")]
+position = Vector2(-30, 27)
+image = NodePath("ProxInteract")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal2/Proximity2"]
+shape = SubResource("CircleShape2D_yh1d5")
+
+[node name="ProxInteract" type="Sprite2D" parent="Penangkal2/Proximity2"]
+position = Vector2(62, -198)
+texture = ExtResource("18_eqc5u")
+
+[node name="Penangkal3" type="Area2D" parent="." node_paths=PackedStringArray("snake") groups=["NPC"]]
+position = Vector2(8193, 7081)
+script = ExtResource("9_o21hk")
+dialogue_resource = ExtResource("10_m6sva")
+title = "start"
+snake = NodePath("Ular")
+is_empty = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3"]
+shape = SubResource("CircleShape2D_sps3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal3"]
+position = Vector2(-18, -84)
+texture = ExtResource("9_5cp6x")
+
+[node name="Ular" type="StaticBody2D" parent="Penangkal3"]
+position = Vector2(-211, -150)
+script = ExtResource("11_b8l35")
+
+[node name="Sprite2D" type="Sprite2D" parent="Penangkal3/Ular"]
+texture = ExtResource("10_ogcf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3/Ular"]
+shape = SubResource("CircleShape2D_bstuj")
+
+[node name="InteractArea" type="Area2D" parent="Penangkal3/Ular" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "snake"
+dialogue_resource = ExtResource("15_uaxnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3/Ular/InteractArea"]
+shape = SubResource("CircleShape2D_d5fjf")
+
+[node name="Proximity" parent="Penangkal3" node_paths=PackedStringArray("image") instance=ExtResource("15_swu8m")]
+position = Vector2(40, 37)
+image = NodePath("ProxInteract")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Penangkal3/Proximity"]
+shape = SubResource("CircleShape2D_yh1d5")
+
+[node name="ProxInteract" type="Sprite2D" parent="Penangkal3/Proximity"]
+position = Vector2(-58, -242)
+texture = ExtResource("18_eqc5u")
+
+[node name="ToyHorse" type="Sprite2D" parent="."]
+position = Vector2(7978, 5132)
+texture = ExtResource("13_h01vi")
+script = ExtResource("15_tp6qg")
+metadata/_edit_group_ = true
+
+[node name="ToyInteract" type="Area2D" parent="ToyHorse" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "start"
+dialogue_resource = ExtResource("16_ovh8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToyHorse/ToyInteract"]
+shape = SubResource("CircleShape2D_s7toh")
+
+[node name="Proximity4" parent="ToyHorse" node_paths=PackedStringArray("image") instance=ExtResource("15_swu8m")]
+image = NodePath("ProxInteract")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToyHorse/Proximity4"]
+shape = SubResource("CircleShape2D_yh1d5")
+
+[node name="ProxInteract" type="Sprite2D" parent="ToyHorse/Proximity4"]
+position = Vector2(-3, -91)
+texture = ExtResource("18_eqc5u")
+
+[node name="Kolektor" type="StaticBody2D" parent="."]
+position = Vector2(6055, 7354)
+scale = Vector2(0.68, 0.68)
+script = ExtResource("20_5t5pd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Kolektor"]
+position = Vector2(18, -112)
+texture = ExtResource("11_ho7dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolektor"]
+shape = SubResource("CircleShape2D_bstuj")
+
+[node name="Area2D" type="Area2D" parent="Kolektor" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "start"
+dialogue_resource = ExtResource("17_2eq40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolektor/Area2D"]
+shape = SubResource("CircleShape2D_d5fjf")
+
+[node name="InteractAlert" type="Sprite2D" parent="Kolektor/Area2D"]
+z_index = 1
+position = Vector2(-4.41113, -327.941)
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("23_k84x8")
+
+[node name="Kakek" type="StaticBody2D" parent="." groups=["AutoDialogue"]]
+position = Vector2(-599, 7349)
+scale = Vector2(0.68, 0.68)
+script = ExtResource("19_abucc")
+dialogue_resource = ExtResource("20_s4owc")
+title = "noise"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Kakek"]
+position = Vector2(17.6471, -86.7646)
+texture = ExtResource("12_orbcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kakek"]
+shape = SubResource("CircleShape2D_bstuj")
+
+[node name="Area2D" type="Area2D" parent="Kakek" groups=["NPC"]]
+script = ExtResource("13_jsmaw")
+title = "start"
+dialogue_resource = ExtResource("19_cgxly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kakek/Area2D"]
+shape = SubResource("CircleShape2D_d5fjf")
+
+[node name="InteractAlert" type="Sprite2D" parent="Kakek/Area2D"]
+z_index = 1
+position = Vector2(0, -242.647)
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("18_eqc5u")
+
+[node name="AnimalBreak" type="Node2D" parent="."]
+position = Vector2(385, 1494)
+script = ExtResource("24_hjnep")
+metadata/_edit_group_ = true
+
+[node name="Footprints" type="Sprite2D" parent="AnimalBreak"]
+texture = ExtResource("27_lkvtt")
+
+[node name="VinesBroken" type="Sprite2D" parent="AnimalBreak"]
+position = Vector2(-54, -107)
+texture = ExtResource("28_6cp55")
+
+[node name="Area2D" type="Area2D" parent="AnimalBreak" groups=["NPC"]]
+position = Vector2(180, 112)
+script = ExtResource("13_jsmaw")
+title = "footprint"
+dialogue_resource = ExtResource("20_s4owc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimalBreak/Area2D"]
+shape = SubResource("CircleShape2D_6f1p3")
+
+[node name="InteractAlert" type="Sprite2D" parent="AnimalBreak/Area2D"]
+z_index = 1
+position = Vector2(0, -66)
+texture = ExtResource("18_eqc5u")
+
+[node name="Vines" type="StaticBody2D" parent="."]
+position = Vector2(338, 1455)
+script = ExtResource("27_f4wxe")
+metadata/_edit_group_ = true
+
+[node name="VinesSprite" type="Sprite2D" parent="Vines"]
+texture = ExtResource("26_lt06c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vines"]
+position = Vector2(54, 26)
+rotation = -0.859689
+shape = SubResource("RectangleShape2D_m3f3a")
+
+[node name="Area2D" type="Area2D" parent="Vines" groups=["NPC"]]
+position = Vector2(112, 58)
+script = ExtResource("13_jsmaw")
+title = "start"
+dialogue_resource = ExtResource("26_wl70l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vines/Area2D"]
+rotation = -0.870961
+shape = SubResource("RectangleShape2D_hevj7")
+
+[node name="InteractAlert" type="Sprite2D" parent="Vines/Area2D"]
+z_index = 1
+position = Vector2(0, -47)
+texture = ExtResource("18_eqc5u")
+
+[node name="Map" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Map1" type="Sprite2D" parent="Map"]
+z_index = -1
+position = Vector2(2127, 2048)
+texture = ExtResource("7_cght0")
+metadata/_edit_lock_ = true
+
+[node name="Map2" type="Sprite2D" parent="Map"]
+z_index = -1
+position = Vector2(4057, 8035)
+texture = ExtResource("35_7kb38")
+metadata/_edit_lock_ = true
+
+[node name="Collision" type="StaticBody2D" parent="Map"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Collision"]
+position = Vector2(995.5, 477)
+shape = SubResource("RectangleShape2D_jx16t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(602, 260, 859, 203, 1263, 200, 1508, 317, 1554, 641, 1675, 898, 1475, 970, 1350, 1053, 1316, 1249, 1225, 1427, 1346, 1581, 1467, 1695, 1814, 1861, 1977, 1940, 2282, 2046, 2388, 2038, 2871, 1944, 3120, 2101, 2931, 1859, 3068, 1438, 3181, 1547, 3543, 1517, 3653, 1393, 4042, 1325, 4193, 1355, 4019, 1472, 4068, 1536, 4042, 1630, 4457, 1827, 4521, 1872, 4446, 1997, 4401, 2034, 4280, 2095, 4159, 2087, 4132, 2295, 3929, 2370, 3317, 2167, 3302, 2216, 3728, 2438, 3472, 2525, 3347, 2842, 3358, 3616, 3249, 4020, 3381, 4534, 3937, 4393, 3900, 3659, 5055, 2694, 5130, 1214, 3575, 663, 1642, -379, 109, -319, -722, 270, -1386, 1040, -601, 2233, 275, 3167, 1664, 4078, 2448, 4755, 2528, 4102, 2495, 3598, 2394, 2750, 1600, 2326, 947, 2279, 611, 1842, 297, 1809, 327, 1705, -62, 1290, -391, 1008, -163, 799, 86, 1122, 603, 1347, 772, 1305, 751, 1118, 429, 880, 429, 497)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(2253, 4229, 2601, 4526, 2728, 4890, 2652, 5221, 2364, 5535, 1821, 5713, 1880, 5865, 1804, 6069, 1236, 5975, 982, 6069, 440, 6179, 92, 6484, -544, 6747, -637, 6865, -400, 6950, -501, 7221, -967, 7111, -908, 6840, -1256, 6865, -1315, 7111, -1230, 7297, -815, 7425, -586, 8086, -688, 8391, -654, 8645, -823, 8959, -467, 9366, -196, 9688, 312, 9544, 736, 9662, 1330, 9883, 1830, 9916, 2194, 9755, 2508, 9874, 2609, 9535, 2931, 9425, 3220, 9603, 3525, 9603, 3711, 9908, 3609, 10179, 3737, 10637, 3949, 10289, 4415, 10315, 4660, 10433, 4957, 10298, 5500, 10137, 5787, 10339, 6714, 9881, 6396, 9624, 6898, 8637, 7212, 8213, 8085, 8323, 9051, 8043, 9170, 6899, 9076, 5772, 8381, 4704, 7008, 4450, 6262, 5229, 5779, 5501, 5101, 5780, 4816, 6024, 4070, 6125, 3962, 6024, 4164, 5815, 4211, 5577, 3508, 5484, 3270, 5212, 3228, 4797, 3381, 4475, 4466, 4399, 8890, 3805, 10663, 6723, 9425, 10060, 7044, 12791, 2066, 11836, -2414, 11069, -3101, 6373)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(2353, 6468, 1896, 6481, 1477, 6697, 1445, 6919, 1185, 7141, 1020, 7471, 937, 7586, 613, 7865, 461, 8265, 544, 8633, 804, 9173, 1001, 9294, 1471, 9116, 1731, 8989, 1833, 8817, 2201, 8760, 2398, 8386, 2436, 8252, 2696, 8138, 2715, 7992, 2544, 7744, 2264, 7833, 2315, 7681, 2017, 7255, 1979, 6989, 2449, 6620)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(4772, 7511, 4528, 7709, 4817, 7963, 5127, 8046, 5325, 8204, 5523, 8238, 5394, 8354, 5405, 8523, 5564, 8705, 5824, 8597, 5841, 8467, 5699, 8241, 5852, 8303, 6050, 8410, 6293, 8292, 6333, 8122, 6406, 7975, 5824, 7432, 5179, 7296)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(145, 7214, 141, 7350, 417, 7458, 621, 7234, 641, 7130, 453, 6942, 165, 7150)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(-323, 7886, -295, 8018, -35, 8114, 145, 7914, 153, 7746, -15, 7674, -51, 7594, -107, 7666, -147, 7662)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map/Collision"]
+position = Vector2(-119, 8495.5)
+shape = SubResource("RectangleShape2D_oihbp")
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(-501, 9055, -252, 8925, -81, 9147, -113, 9172, -106, 9237, -317, 9352, -468, 9183, -477, 9105)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Map/Collision"]
+position = Vector2(4140, -922)
+polygon = PackedVector2Array(-511, 9018, -253, 8911, -16, 9083, -75, 9137, -72, 9219, -317, 9352, -468, 9183, -477, 9105)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(2402, 8783, 2587, 8995, 2890, 8864, 2883, 8719, 2661, 8467, 2375, 8625)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(1992, 9210, 2312, 9116, 2530, 9375, 2486, 9520, 2211, 9628, 2019, 9372)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(2910, 9247, 3048, 9052, 3267, 9133, 3243, 9264, 3129, 9412, 2934, 9342)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(3229, 8873, 3225, 9032, 3838, 9206, 3952, 9085, 3972, 9213, 4144, 9277, 4319, 9257, 4399, 9143, 4285, 8934, 4073, 8904, 3952, 8884, 3703, 8786, 3461, 8709, 3350, 8715)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(4245, 8480, 4268, 8352, 4159, 8318, 4340, 8102, 5140, 8329, 5016, 8548, 4906, 8676)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(4645, 9422, 4570, 9514, 4873, 9832, 5208, 9910, 5386, 9753, 5358, 9514, 5176, 9251, 4870, 9187, 4720, 9244)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(5502, 9299, 5764, 9416, 5990, 9154, 6195, 9201, 6706, 8939, 6874, 8390, 6807, 8330, 5852, 8834, 5653, 8955, 5488, 9124, 5512, 9211)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(5690, 6894, 6057, 6588, 6674, 6923, 6848, 6891, 7233, 7283, 7258, 7475, 6695, 7742, 6342, 7258)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(5535, 6775, 6415, 6147, 6235, 6019, 6279, 5967, 6523, 6091, 6578, 6184, 6159, 6503, 6671, 6791, 6799, 6747, 7171, 6431, 6679, 5975, 7242, 5597, 7306, 5661, 6867, 5999, 7301, 6371, 7328, 6518, 7475, 6531, 7547, 6363, 7971, 5967, 7434, 5474, 7551, 5371, 7499, 5291, 7591, 5215, 7659, 5287, 8011, 5059, 8071, 5155, 7603, 5491, 8047, 5891, 8151, 5827, 8203, 5919, 7643, 6443, 8019, 6807, 8055, 6951, 7359, 7299, 7407, 7499, 7631, 7887, 8075, 7587, 8390, 7308, 8174, 7135, 8257, 7065, 8561, 7293, 8195, 7623, 7631, 8027, 7335, 7591, 6807, 7855, 7202, 8397, 8361, 8543, 9063, 7247, 8447, 6651, 8139, 6323, 8599, 5955, 8255, 5563, 8267, 5083, 7951, 4771, 6803, 4803, 6311, 5263, 5927, 5715, 5195, 6135)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Map/Collision"]
+polygon = PackedVector2Array(6924, 6828, 7316, 7216, 7916, 6924, 7500, 6460, 7272, 6492)

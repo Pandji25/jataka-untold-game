@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6wui0c7h4r16"]
+
+[ext_resource type="Texture2D" uid="uid://e7cusu2br7ne" path="res://img/interactible.png" id="1_a2c1h"]
+
+[node name="InteractAlert" type="Sprite2D"]
+position = Vector2(0, -242.647)
+texture = ExtResource("1_a2c1h")

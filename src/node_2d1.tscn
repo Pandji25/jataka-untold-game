@@ -20,6 +20,7 @@ radius = 99.4082
 position = Vector2(-208, 184)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(3232, 1080)
 texture = ExtResource("1_6cja1")
 

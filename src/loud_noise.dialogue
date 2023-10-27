@@ -1,0 +1,21 @@
+~ noise
+
+Tiba-tiba, kau mendengar suara yang cukup keras yang berasal dari arah utara.
+Sepertinya dari arah di mana kamu terbangun.
+
+~ check
+
+Kau: Aku harus coba pergi memeriksanya!
+
+set loud_noise_heard = true
+
+=> END
+
+~ footprint
+
+Kau: Bagaimana mungkin? Jalanannya terbuka?
+Kau: Apa ini? Jejak kaki hewan?
+Kau: Terdapat banyak jenis jejak kaki hewan juga. Sangat aneh...
+Kau: Apakah mungkin hewan-hewan tersebut yang membuka jalan ini?
+
+=> END
